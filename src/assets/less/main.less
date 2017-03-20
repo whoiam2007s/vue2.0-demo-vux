@@ -1,0 +1,73 @@
+@import "//at.alicdn.com/t/font_q919t4qxl22ihpvi.css";
+
+input,textarea{
+  outline: none;
+}
+
+.container{
+  position: relative;
+  width:100vw;
+  height:100vh;
+  box-sizing: border-box;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.content{
+  box-sizing: border-box;
+  padding: 0 .4rem;
+}
+.has-header{
+  padding-top: 1.2rem;
+}
+.has-bottom{
+  padding-bottom: 1.4rem;
+}
+
+.float-fixed{
+  .fl{
+    float:left;
+  }
+  .fr{
+    float:right;
+  }
+  &:after{
+    content:'';
+    display: block;
+    clear:both;
+  }
+}
+
+.inline-row{
+  .item{
+    display:inline-block;
+    vertical-align:middle;
+  }
+}
+
+.flex{
+  display: flex;
+  box-align: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .flex-item{
+    flex: 1;
+    min-width: 20px;
+  }
+}
+
+.text-over{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-center{
+  text-align: center;
+}
+
