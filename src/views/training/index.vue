@@ -19,6 +19,8 @@
       <progress-item :data="item"></progress-item>
     </div>
 
+    <graphs :data="calendar_data"></graphs>
+
   </div>
 </template>
 
@@ -27,6 +29,7 @@
   import ExerciseCharts from 'components/exercise/exerciseCharts';
   import Calendar from 'components/training/calendar';
   import ProgressItem from 'components/training/progressItem';
+  import Graphs from 'components/training/graphs';
 
   export default {
     components: {
@@ -34,6 +37,7 @@
       ExerciseCharts,
       Calendar,
       ProgressItem,
+      Graphs,
     },
     props: {},
     data() {
@@ -60,6 +64,7 @@
           this.calendar_data.push({
             date: new Date(y, m, d-day+i),
             active: Math.random() > .5,
+            value: Math.round(Math.random()*100+100)
           })
       }
     },
