@@ -16,7 +16,7 @@
                 <div v-text="data.likecount"></div>
               </div>
             </div>
-            <div class="inline-row joinbtn">
+            <div class="inline-row joinbtn" @click="onUserClick">
               <i class="iconfont icon-add item"></i>
               <span class="item">Join</span>
             </div>
@@ -32,6 +32,11 @@
         },
         data() {
             return {}
+        },
+        methods:{
+          onUserClick(){
+            this.$emit('userclick')
+          }
         }
     }
 </script>

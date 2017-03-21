@@ -1,7 +1,7 @@
 <template>
     <div class="popular-index content">
       <div v-for="item in items" class="blks">
-        <popular-item :data="item"></popular-item>
+        <popular-item :data="item" @userclick="onUserClick"></popular-item>
       </div>
     </div>
 </template>
@@ -69,6 +69,13 @@
                     ]
                   },
                 ]
+            }
+        },
+        methods: {
+            onUserClick(){
+                this.$router.push({
+                    path: '/mine/456/posts'
+                })
             }
         }
     }

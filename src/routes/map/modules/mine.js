@@ -4,7 +4,7 @@
 
 export default [
     {
-        path: '/mine',
+        path: '/mine/:userid',
         name:'mine',
         component: resolve => require(['views/mine'], resolve),
         children: [

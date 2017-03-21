@@ -17,7 +17,7 @@
         <div v-text="data.time"></div>
         <span v-text="data.count" v-if="data.count>0"></span>
       </div>
-      <div class="delete" @click="onDelClick">
+      <div class="delete" >
         <i class="iconfont icon-del"></i>
       </div>
     </div>
@@ -54,6 +54,9 @@
           onItemClick(){
             this.$emit('itemClick')
           },
+          onUserClick(){
+            this.$emit('userclick')
+          },
           onDelClick(){
             this.$emit('delClick')
           },
@@ -71,7 +74,13 @@
           },
           onTouchEnd(event){
               if(!this.isTouchMove){
-                  this.onItemClick();
+                  if(event.target.className == 'iconfont icon-del' || event.target.className == 'delete'){
+                      this.onDelClick()
+                  }else if(event.target.tagName.toLowerCase() == 'img'){
+                      this.onUserClick()
+                  }else{
+                    this.onItemClick()
+                  }
                   return true;
               }
               this.isTouchMove = false;

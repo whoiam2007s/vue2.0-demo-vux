@@ -22,7 +22,7 @@
 
             <div class="detail-comment">
                 <div class="title"><span>{{__moneyNum(data.comments_count)}} </span>comment</div>
-                <exercise-comment v-for="item in data.comments" :data="item"></exercise-comment>
+                <exercise-comment v-for="item in data.comments" :data="item" @userclick="onUserClick"></exercise-comment>
             </div>
         </div>
 
@@ -43,7 +43,6 @@
         },
         data() {
             return {
-
                 is_detail_show: false,
                 item:{
                     title: 'Targeting Weak',
@@ -109,6 +108,11 @@
             },
             onMoreClick(){
                 this.is_detail_show = !this.is_detail_show
+            },
+            onUserClick(){
+                this.$router.push({
+                    path: '/mine/123/posts'
+                })
             }
         }
     }

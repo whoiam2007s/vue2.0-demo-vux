@@ -4,7 +4,7 @@
         <div slot="title">Message</div>
       </my-header>
 
-      <message-item v-for="(item, index) in items" :key="item.id" :data="item" @itemClick="onItemClick(item.id)" @delClick="onDelClick(index)"></message-item>
+      <message-item v-for="(item, index) in items" :key="item.id" :data="item" @userclick="onUserClick" @itemClick="onItemClick(item.id)" @delClick="onDelClick(index)"></message-item>
 
     </div>
 </template>
@@ -142,6 +142,11 @@
         methods: {
           onLeftClick(){
               this.$router.back();
+          },
+          onUserClick(){
+              this.$router.push({
+                  path: '/mine/789/posts'
+              })
           },
           onItemClick(id){
               this.$router.push({

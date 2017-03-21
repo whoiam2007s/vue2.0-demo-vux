@@ -4,9 +4,9 @@
         <img v-if="data.type=='img'" :src="data.src" />
         <video v-if="data.type=='video'" :src="data.src" :poster="data.img" preload="none" controls/>
       </div>
-      <div class="info ">
-        <div class="text-over" v-text="data.title"></div>
-        <div class="text-over" v-text="data.desc"></div>
+      <div class="info " @click="onShowClick">
+        <div :class="{'text-over':!isshow }" v-text="data.title"></div>
+        <div :class="{'text-over':!isshow }" v-text="data.desc"></div>
       </div>
     </div>
 </template>
@@ -18,7 +18,14 @@
             data: Object,
         },
         data() {
-            return {}
+            return {
+                isshow: false,
+            }
+        },
+        methods: {
+          onShowClick(){
+            this.isshow = true;
+          }
         }
     }
 </script>

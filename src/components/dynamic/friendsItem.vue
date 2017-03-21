@@ -1,6 +1,6 @@
 <template>
     <div class="friends-item">
-      <div class="mine flex">
+      <div class="mine flex" @click="onUserClick">
         <img :src="data.mine.headimg" />
         <div class="flex-item">
           <div class="text-over name" v-text="data.mine.name"></div>
@@ -46,6 +46,9 @@
         methods: {
             onLikeClick(){
                 this.likesta = 1;
+            },
+            onUserClick(){
+                this.$emit('userclick')
             }
         }
     }

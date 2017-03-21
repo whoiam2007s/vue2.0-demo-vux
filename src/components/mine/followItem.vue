@@ -1,6 +1,6 @@
 <template>
     <div class="follow-item flex">
-      <img :src="data.headimg" />
+      <img :src="data.headimg" @click="onUserClick"/>
       <div class="flex-item">
         <div class="text-over name" v-text="data.name"></div>
         <div class="text-over " v-text="data.tip"></div>
@@ -34,6 +34,9 @@
                     return ;
                 }
                 this.isfollow = 1;
+            },
+            onUserClick(){
+                this.$emit('userclick')
             }
         }
     }

@@ -1,7 +1,7 @@
 <template>
     <div class="mine-posts content">
       <div class="blks" v-for="item in items">
-        <friends-item :data="item">
+        <friends-item :data="item" @userclick="onUserClick">
           <div slot="media" class="posts-media inline-row">
             <div class="posts-item item" v-for="img in item.imgs">
               <img :src="img" />
@@ -138,6 +138,13 @@
                   },
                 ]
             }
+        },
+        methods: {
+            onUserClick(){
+                this.$router.push({
+                    path:'/mine/999/posts'
+                })
+            }
         }
     }
 </script>
@@ -148,6 +155,7 @@
     bottom:0;
     right:0;
     overflow: auto;
+    padding-top: .4rem;
     .blks{
       margin-bottom: .4rem;
       .posts-media{

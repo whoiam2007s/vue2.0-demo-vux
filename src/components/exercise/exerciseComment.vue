@@ -1,9 +1,9 @@
 <template>
     <div class="exercise-comment">
         <flexbox :gutter="0">
-            <img :src="data.headimg" />
+            <img :src="data.headimg" @click="onUserClick"/>
             <flexbox-item class="info">
-                <div>{{data.name}}</div>
+                <div @click="onUserClick">{{data.name}}</div>
                 <span>{{data.time}}</span>
             </flexbox-item>
             <div class="star">
@@ -37,6 +37,9 @@
         methods: {
             onStarClick(){
                 this.starFlag = true
+            },
+            onUserClick(){
+                this.$emit('userclick')
             }
         }
     }

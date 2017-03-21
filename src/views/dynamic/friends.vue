@@ -1,7 +1,7 @@
 <template>
     <div class="friends-index content">
         <div v-for="item in items" class="blks">
-            <friends-item :data="item"></friends-item>
+            <friends-item :data="item" @userclick="onUserClick"></friends-item>
         </div>
     </div>
 </template>
@@ -94,6 +94,13 @@
                       viewcount: 153,
                   },
                 ]
+            }
+        },
+        methods: {
+            onUserClick(){
+              this.$router.push({
+                path: '/mine/456/posts'
+              })
             }
         }
     }

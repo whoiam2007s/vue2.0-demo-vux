@@ -1,7 +1,7 @@
 <template>
   <div class="mine-followers content">
     <div class="blks" v-for="item in items">
-      <follow-item :data="item"></follow-item>
+      <follow-item :data="item" @userclick="onUserClick(item.id)"></follow-item>
     </div>
   </div>
 </template>
@@ -25,62 +25,69 @@
             isfollow: 0,
           },
           {
-            id:1,
+            id:2,
             headimg: require('assets/images/temp/1.jpg'),
             name: 'My Name',
             tip: 'Some thing to say',
             isfollow: 0,
           },
           {
-            id:1,
+            id:3,
             headimg: require('assets/images/temp/1.jpg'),
             name: 'My Name',
             tip: 'Some thing to say',
             isfollow: 0,
           },
           {
-            id:1,
+            id:4,
             headimg: require('assets/images/temp/1.jpg'),
             name: 'My Name',
             tip: 'Some thing to say',
             isfollow: 0,
           },
           {
-            id:1,
+            id:5,
             headimg: require('assets/images/temp/1.jpg'),
             name: 'My Name',
             tip: 'Some thing to say',
             isfollow: 0,
           },
           {
-            id:1,
+            id:6,
             headimg: require('assets/images/temp/1.jpg'),
             name: 'My Name',
             tip: 'Some thing to say',
             isfollow: 0,
           },
           {
-            id:1,
+            id:7,
             headimg: require('assets/images/temp/1.jpg'),
             name: 'My Name',
             tip: 'Some thing to say',
             isfollow: 0,
           },
           {
-            id:1,
+            id:8,
             headimg: require('assets/images/temp/1.jpg'),
             name: 'My Name',
             tip: 'Some thing to say',
             isfollow: 0,
           },
           {
-            id:1,
+            id:9,
             headimg: require('assets/images/temp/1.jpg'),
             name: 'My Name',
             tip: 'Some thing to say',
             isfollow: 0,
           },
         ]
+      }
+    },
+    methods: {
+      onUserClick(userid){
+        this.$router.push({
+          path: `/mine/${userid}/posts`
+        })
       }
     }
   }

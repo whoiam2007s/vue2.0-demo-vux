@@ -1,7 +1,7 @@
 <template>
     <div class="mine-following content">
       <div class="blks" v-for="item in items">
-        <follow-item :data="item"></follow-item>
+        <follow-item :data="item" @userclick="onUserClick(item.id)"></follow-item>
       </div>
     </div>
 </template>
@@ -18,70 +18,70 @@
             return {
                 items: [
                   {
-                      id:1,
+                      id:11,
                       headimg: require('assets/images/temp/1.jpg'),
                       name: 'My Name',
                       tip: 'Some thing to say',
                       isfollow: 1,
                   },
                   {
-                      id:1,
+                      id:21,
                       headimg: require('assets/images/temp/1.jpg'),
                       name: 'My Name',
                       tip: 'Some thing to say',
                       isfollow: 1,
                   },
                   {
-                      id:1,
+                      id:31,
                       headimg: require('assets/images/temp/1.jpg'),
                       name: 'My Name',
                       tip: 'Some thing to say',
                       isfollow: 1,
                   },
                   {
-                      id:1,
+                      id:41,
                       headimg: require('assets/images/temp/1.jpg'),
                       name: 'My Name',
                       tip: 'Some thing to say',
                       isfollow: 1,
                   },
                   {
-                      id:1,
+                      id:51,
                       headimg: require('assets/images/temp/1.jpg'),
                       name: 'My Name',
                       tip: 'Some thing to say',
                       isfollow: 1,
                   },
                   {
-                      id:1,
+                      id:61,
                       headimg: require('assets/images/temp/1.jpg'),
                       name: 'My Name',
                       tip: 'Some thing to say',
                       isfollow: 1,
                   },
                   {
-                      id:1,
+                      id:71,
                       headimg: require('assets/images/temp/1.jpg'),
                       name: 'My Name',
                       tip: 'Some thing to say',
                       isfollow: 1,
                   },
                   {
-                      id:1,
+                      id:81,
                       headimg: require('assets/images/temp/1.jpg'),
                       name: 'My Name',
                       tip: 'Some thing to say',
                       isfollow: 1,
                   },
                   {
-                      id:1,
+                      id:91,
                       headimg: require('assets/images/temp/1.jpg'),
                       name: 'My Name',
                       tip: 'Some thing to say',
                       isfollow: 1,
                   },
                   {
-                      id:1,
+                      id:10,
                       headimg: require('assets/images/temp/1.jpg'),
                       name: 'My Name',
                       tip: 'Some thing to say',
@@ -89,6 +89,13 @@
                   },
                 ]
             }
+        },
+        methods: {
+          onUserClick(userid){
+            this.$router.push({
+              path: `/mine/${userid}/posts`
+            })
+          }
         }
     }
 </script>
