@@ -61,7 +61,7 @@
                             break;
                         }
                         case 3:{
-                            route_path = '/mine/posts'
+                            route_path = '/mine/0/posts'
                             break;
                         }
                     }
